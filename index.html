@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Institution</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Home Page Styles */
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Form Styles */
+        .login-form, .register-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form h2, .register-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-form label, .register-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .login-form input, .register-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form button, .register-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover, .register-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* About Page Styles */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <h1 id="pageTitle">Welcome to Our Educational Institution</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="loadPage('home')">Home</a></li>
+                <li><a href="#about" onclick="loadPage('about')">About Us</a></li>
+                <li><a href="#login" onclick="loadPage('login')">Login</a></li>
+                <li><a href="#register" onclick="loadPage('register')">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Home Page -->
+        <section id="home" class="page">
+            <div class="hero">
+                <h2>Empowering Future Leaders</h2>
+                <p>Join our institution to unlock your potential and achieve your dreams.</p>
+                <a href="#register" onclick="loadPage('register')" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page" style="display: none;">
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p>We are committed to providing quality education and fostering a culture of innovation and excellence.</p>
+                
+                <h2>Our History</h2>
+                <p>Founded in 1990, our institution has been a pioneer in education, producing leaders in various fields.</p>
+                
+                <h2>Our Vision</h2>
+                <p>To be a globally recognized institution that transforms lives through education.</p>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page" style="display: none;">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#register" onclick="loadPage('register')">Register here</a>.</p>
+            </div>
+        </section>
+
+        <!-- Registration Page -->
+        <section id="register" class="page" style="display: none;">
+            <div class="register-form">
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="#login" onclick="loadPage('login')">Login here</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Educational Institution. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to load pages dynamically
+        function loadPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected page
+            document.getElementById(page).style.display = 'block';
+
+            // Update the page title
+            document.getElementById('pageTitle').textContent = {
+                home: 'Welcome to Our Educational Institution',
+                about: 'About Us',
+                login: 'Login',
+                register: 'Register'
+            }[page];
+        }
+
+        // Login Form Validation
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'password') {
+                alert('Login successful!');
+                loadPage('home');
+            } else {
+                alert('Invalid username or password.');
+            }
+        });
+
+        // Registration Form Validation
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (fullname && email && username && password) {
+                alert('Registration successful!');
+                loadPage('login');
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+
+        // Load the home page by default
+        window.onload = () => loadPage('home');
+    </script>
+</body>
+</html>
